@@ -14,7 +14,6 @@ class LessonInline(admin.StackedInline):
     model = Lesson
     extra = 5
 
-
 # Register your models here.
 class CourseAdmin(admin.ModelAdmin):
     inlines = [LessonInline]
@@ -27,6 +26,7 @@ class LessonAdmin(admin.ModelAdmin):
     inlines = [QuestionInline]
     list_display = ['title']
 
+#Create QuestionAdmin and ChoiceAdmin to customize forms
 class QuestionAdmin(admin.ModelAdmin):
     inlines = [ChoiceInLine]
     list_display = ['id','question_text']
